@@ -2,14 +2,12 @@
 <style xmlns="http://purl.org/net/xbiblio/csl" version="1.0">
   <info>
     <title>IJG Custom Numerical Clean</title>
-    <id>https://raw.githubusercontent.com/kazharzai/IJG-cite-style/main/IJG_Custom_Numerical_Clean.csl</id>
-    <link href="https://raw.githubusercontent.com/kazharzai/IJG-cite-style/main/IJG_Custom_Numerical_Clean.csl" rel="self"/>
-    <author>
-      <name>Kazharzai</name>
-    </author>
+    <id>https://raw.githubusercontent.com/kazharzai/IJGcite/main/IJG_Custom_Numerical_Clean.csl</id>
+    <link href="https://raw.githubusercontent.com/kazharzai/IJGcite/main/IJG_Custom_Numerical_Clean.csl" rel="self"/>
+    <author><name>Kazharzai</name></author>
     <category citation-format="numeric"/>
-    <summary>IJG-style numeric with name-order fix, volume/no/page and DOI structure.</summary>
-    <updated>2025-07-29T00:00:00+00:00</updated>
+    <summary>Numeric style with surname-initials, volume/no/page formatting, and DOI.</summary>
+    <updated>2025-07-29T12:00:00+00:00</updated>
   </info>
 
   <macro name="author">
@@ -19,18 +17,12 @@
   </macro>
 
   <macro name="issued">
-    <date variable="issued">
-      <date-part name="year"/>
-    </date>
+    <date variable="issued"><date-part name="year"/></date>
   </macro>
 
-  <macro name="title">
-    <text variable="title" suffix=". "/>
-  </macro>
+  <macro name="title"><text variable="title" suffix=". "/></macro>
 
-  <macro name="journal">
-    <text variable="container-title" suffix=", "/>
-  </macro>
+  <macro name="container"><text variable="container-title" suffix=", "/></macro>
 
   <macro name="volume-issue-page">
     <group delimiter=", ">
@@ -40,17 +32,11 @@
     </group>
   </macro>
 
-  <macro name="doi">
-    <text variable="DOI" prefix="doi: " suffix="."/>
-  </macro>
+  <macro name="doi"><text variable="DOI" prefix="doi: " suffix="." /></macro>
 
   <citation>
-    <sort>
-      <key variable="citation-number"/>
-    </sort>
-    <layout delimiter=" ">
-      <text variable="citation-number" prefix="[" suffix="]"/>
-    </layout>
+    <sort><key variable="citation-number"/></sort>
+    <layout delimiter=" "><text variable="citation-number" prefix="[" suffix="]"/></layout>
   </citation>
 
   <bibliography>
@@ -58,7 +44,7 @@
       <text macro="author" suffix=" "/>
       <text macro="issued" prefix="(" suffix="). "/>
       <text macro="title"/>
-      <text macro="journal"/>
+      <text macro="container"/>
       <text macro="volume-issue-page" suffix=". "/>
       <text macro="doi"/>
     </layout>
